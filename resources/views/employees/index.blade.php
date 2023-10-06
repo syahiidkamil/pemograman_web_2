@@ -134,18 +134,6 @@
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js">
-        document.addEventListener("DOMContentLoaded", function() {
-    var deleteModal = document.getElementById('deleteKaryawanModal');
-    var deleteForm = document.getElementById('deleteForm');
-
-    deleteModal.addEventListener('show.bs.modal', function(event) {
-        var button = event.relatedTarget;
-        var id = button.getAttribute('data-id');
-        var action = '/employees/' + id;
-        deleteForm.action = action;
-    });
-});
-       
        var myModal = new bootstrap.Modal(document.getElementById('addKaryawanModal'), {});
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -164,5 +152,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var deleteModal = document.getElementById('deleteKaryawanModal');
+        var deleteForm = document.getElementById('deleteForm');
+
+        deleteModal.addEventListener('show.bs.modal', function(event) {
+            var button = event.relatedTarget;
+            var id = button.getAttribute('data-id');
+            var action = '/employees/' + id;
+            deleteForm.action = action;
+        });
+    });
+</script>
 </body>
 </html>
