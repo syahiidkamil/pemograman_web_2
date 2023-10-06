@@ -25,3 +25,6 @@ Route::post('/login', [AuthController::class, 'login']);
 
 Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
+
+Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+
