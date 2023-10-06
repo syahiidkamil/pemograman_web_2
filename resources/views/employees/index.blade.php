@@ -2,53 +2,54 @@
 <html>
 <head>
     <title>Employee Dashboard</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <div class="sidebar">
-                    <div class="logo">
-                        <!-- Your Logo Here -->
-                    </div>
-                    <ul class="nav nav-pills nav-stacked">
-                        <li class="active"><a href="#">Data Karyawan</a></li>
-                        <li><a href="#">Data Nasabah</a></li>
-                        <li><a href="#">Setting</a></li>
-                        <li><a href="#">Logout</a></li>
-                    </ul>
-                </div>
+<body>
+    <div class="container-fluid">
+        <div class="row min-vh-100">
+            <div class="col-md-3 bg-dark text-light py-3" id="sidebar">
+                <figure class="text-center">
+                      <!-- your logo here -->
+                      <!-- <img src="your-logo.png" alt="Logo" height="50" class="navbar-brand-img"> -->
+                </figure>
+                <ul class="nav flex-column pl-4">
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light active" href="#">Data Karyawan</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Data Nasabah</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Setting</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
+                </ul>
             </div>
-            <div class="col-sm-9">
-                <div class="content">
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>No.</th>
-                                <th>Email</th>
-                                <th>Name</th>
-                                <!-- Add other columns -->
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach($employees as $employee)
+            <div class="col-md-9">
+                <div class="container py-3">
+                    <h2 class="mt-3">Employee List</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead class="thead-dark">
                                 <tr>
-                                    <td>{{ $employee->id }}</td>
-                                    <td>{{ $employee->email }}</td>
-                                    <td>{{ $employee->Nama }}</td>
+                                    <th>No.</th>
+                                    <th>Email</th>
+                                    <th>Name</th>
                                     <!-- Add other columns -->
                                 </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                            </thead>
+                            <tbody>
+                                @foreach($employees as $employee)
+                                    <tr>
+                                        <td>{{ $employee->id }}</td>
+                                        <td>{{ $employee->email }}</td>
+                                        <td>{{ $employee->Nama }}</td>
+                                        <!-- Add other columns -->
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
