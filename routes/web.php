@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +22,6 @@ Route::get('/', 'App\Http\Controllers\EmployeeController@index')->middleware('au
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+
+Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
+Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
