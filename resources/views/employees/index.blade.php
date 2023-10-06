@@ -50,7 +50,11 @@
                                         <td>{{ $employee->telepon }}</td>
                                         <td>{{ $employee->avatar }}</td>
                                         <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addKaryawanModal" data-id="{{ $employee->id }}">Edit</button>
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addKaryawanModal"
+    data-id="{{ $employee->id }}" data-email="{{ $employee->email }}" data-password="{{ $employee->password }}"
+    data-nama="{{ $employee->Nama }}" data-namabelakang="{{ $employee->Nama_belakang }}" data-alamat="{{ $employee->alamat }}"
+    data-telepon="{{ $employee->telepon }}" data-avatar="{{ $employee->avatar }}">Edit</button>
+
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteKaryawanModal" data-id="{{ $employee->id }}">Delete</button>
             </td>
                                     </tr>
@@ -165,6 +169,36 @@ document.addEventListener("DOMContentLoaded", function() {
             deleteForm.action = action;
         });
     });
+</script>
+<script> document.addEventListener("DOMContentLoaded", function() {
+    var modal = document.getElementById('addKaryawanModal');
+    var modalLabel = document.getElementById('addKaryawanModalLabel');
+
+    modal.addEventListener('show.bs.modal', function(event) {
+        var button = event.relatedTarget;
+        var id = button.getAttribute('data-id');
+        if (id) {
+            modalLabel.textContent = 'Edit Karyawan';
+            document.getElementById('email').value = button.getAttribute('data-email');
+            document.getElementById('password').value = button.getAttribute('data-password');
+            document.getElementById('Nama').value = button.getAttribute('data-nama');
+            document.getElementById('Nama_belakang').value = button.getAttribute('data-namabelakang');
+            document.getElementById('alamat').value = button.getAttribute('data-alamat');
+            document.getElementById('telepon').value = button.getAttribute('data-telepon');
+            document.getElementById('avatar').value = button.getAttribute('data-avatar');
+        } else {
+            modalLabel.textContent = 'Add Karyawan';
+            // Clear any previous values
+            document.getElementById('email').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('Nama').value = '';
+            document.getElementById('Nama_belakang').value = '';
+            document.getElementById('alamat').value = '';
+            document.getElementById('telepon').value = '';
+            document.getElementById('avatar').value = '';
+        }
+    });
+});
 </script>
 </body>
 </html>
