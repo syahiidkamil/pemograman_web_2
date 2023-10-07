@@ -213,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <script>
     document.addEventListener("DOMContentLoaded", function() {
     var currentPath = window.location.pathname.split("/").pop();
-    if (currentPath === "employees") {
+    if (currentPath === "employees" || currentPath === "" ) {
         document.getElementById("menu-employees").classList.add("active");
     } else if (currentPath === "customers") {
         document.getElementById("menu-customers").classList.add("active");
