@@ -13,8 +13,8 @@
                       <img src="assets/images/logo_unsia.png" alt="Logo" height="50" class="navbar-brand-img">
                 </figure>
                 <ul class="nav flex-column pl-4">
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light active" href="#">Data Karyawan</a></li>
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Data Nasabah</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="employees">Data Karyawan</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="customers">Data Nasabah</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Setting</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
                 </ul>
