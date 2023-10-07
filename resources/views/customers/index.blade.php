@@ -3,6 +3,11 @@
 <head>
     <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       .active {
+    background-color: #343a40; /* or any color you prefer */
+}
+    </style>
 </head>
 
 <body>
@@ -13,8 +18,8 @@
                       <img src="assets/images/logo_unsia.png" alt="Logo" height="50" class="navbar-brand-img">
                 </figure>
                 <ul class="nav flex-column pl-4">
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="employees">Data Karyawan</a></li>
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="customers">Data Nasabah</a></li>
+                <li id="menu-employees" class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="employees">Data Karyawan</a></li>
+                <li id="menu-customers" class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="customers">Data Nasabah</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Setting</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
                 </ul>
@@ -198,6 +203,17 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('avatar').value = '';
         }
     });
+});
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var currentPath = window.location.pathname.split("/").pop();
+    if (currentPath === "employees") {
+        document.getElementById("menu-employees").classList.add("active");
+    } else if (currentPath === "customers") {
+        document.getElementById("menu-customers").classList.add("active");
+    }
 });
 </script>
 </body>
