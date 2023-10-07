@@ -46,7 +46,7 @@
                                     <th>Alamat</th>
                                     <th>Telepon</th>
                                     <th>Avatar</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
