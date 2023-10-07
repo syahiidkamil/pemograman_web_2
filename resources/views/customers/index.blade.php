@@ -21,7 +21,12 @@
                 <li id="menu-employees" class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="employees">Data Karyawan</a></li>
                 <li id="menu-customers" class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="customers">Data Nasabah</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Setting</a></li>
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+    <li class="h5 font-weight-bold my-3 nav-item">
+        <a class="nav-link text-danger" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+    </li>
                 </ul>
             </div>
             <div class="col-md-9">

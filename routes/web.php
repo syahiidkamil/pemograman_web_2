@@ -23,6 +23,8 @@ Route::get('/', 'App\Http\Controllers\EmployeeController@index')->middleware('au
 
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
+Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
 
 Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.index');
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
@@ -33,4 +35,5 @@ Route::get('/customers', [CustomerController::class, 'index'])->name('customer.i
 Route::post('/customers', [CustomerController::class, 'store'])->name('customer.store');
 
 Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
+
 
