@@ -33,7 +33,7 @@
                 <div class="container py-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2 class="mt-3">Data Karyawan</h2>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Add Karyawan</button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Tambah Karyawan</button>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function() {
         if (button.getAttribute('data-id')) {
             modalLabel.textContent = 'Edit Karyawan';
         } else {
-            modalLabel.textContent = 'Add Karyawan';
+            modalLabel.textContent = 'Tambah Karyawan';
         }
     });
 });
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('telepon').value = button.getAttribute('data-telepon');
             document.getElementById('avatar').value = button.getAttribute('data-avatar');
         } else {
-            modalLabel.textContent = 'Add Karyawan';
+            modalLabel.textContent = 'Tambah Karyawan';
             // Clear any previous values
             document.getElementById('email').value = '';
             document.getElementById('password').value = '';

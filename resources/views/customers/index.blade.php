@@ -33,7 +33,7 @@
                 <div class="container py-3">
                     <div class="d-flex justify-content-between align-items-center">
                         <h2 class="mt-3">Data Nasabah</h2>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Add Nasabah</button>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Tambah Nasabah</button>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
@@ -156,9 +156,9 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById('addKaryawanModal').addEventListener('show.bs.modal', function(event) {
         var button = event.relatedTarget;
         if (button.getAttribute('data-id')) {
-            modalLabel.textContent = 'Edit Karyawan';
+            modalLabel.textContent = 'Edit Nasabah';
         } else {
-            modalLabel.textContent = 'Add Karyawan';
+            modalLabel.textContent = 'Tambah Nasabah';
         }
     });
 });
@@ -188,7 +188,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var button = event.relatedTarget;
         var id = button.getAttribute('data-id');
         if (id) {
-            modalLabel.textContent = 'Edit Karyawan';
+            modalLabel.textContent = 'Edit Nasabah';
             document.getElementById('email').value = button.getAttribute('data-email');
             document.getElementById('password').value = button.getAttribute('data-password');
             document.getElementById('Nama').value = button.getAttribute('data-nama');
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function() {
             document.getElementById('telepon').value = button.getAttribute('data-telepon');
             document.getElementById('avatar').value = button.getAttribute('data-avatar');
         } else {
-            modalLabel.textContent = 'Add Karyawan';
+            modalLabel.textContent = 'Tambah Nasabah';
             // Clear any previous values
             document.getElementById('email').value = '';
             document.getElementById('password').value = '';
