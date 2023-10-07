@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,4 +28,9 @@ Route::get('/employees', [EmployeeController::class, 'index'])->name('employee.i
 Route::post('/employees', [EmployeeController::class, 'store'])->name('employee.store');
 
 Route::delete('/employees/{id}', [EmployeeController::class, 'destroy'])->name('employee.destroy');
+
+Route::get('/customers', [CustomerController::class, 'index'])->name('customer.index');
+Route::post('/customers', [CustomerController::class, 'store'])->name('customer.store');
+
+Route::delete('/customers/{id}', [CustomerController::class, 'destroy'])->name('customer.destroy');
 

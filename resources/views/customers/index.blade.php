@@ -14,7 +14,7 @@
                 </figure>
                 <ul class="nav flex-column pl-4">
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light active" href="#">Data Karyawan</a></li>
-                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="customers">Data Nasabah</a></li>
+                    <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Data Nasabah</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-light" href="#">Setting</a></li>
                     <li class="h5 font-weight-bold my-3 nav-item"><a class="nav-link text-danger" href="#">Logout</a></li>
                 </ul>
@@ -22,8 +22,8 @@
             <div class="col-md-9">
                 <div class="container py-3">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h2 class="mt-3">Data Karyawan</h2>
-                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Add Karyawan</button>
+                        <h2 class="mt-3">Data Nasabah</h2>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addKaryawanModal">Add Nasabah</button>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-striped table-bordered">
@@ -40,22 +40,22 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach($employees as $employee)
+                                @foreach($customers as $customer)
                                     <tr>
-                                        <td>{{ $employee->id }}</td>
-                                        <td>{{ $employee->email }}</td>
-                                        <td>{{ $employee->Nama }}</td>
-                                        <td>{{ $employee->Nama_belakang }}</td>
-                                        <td>{{ $employee->alamat }}</td>
-                                        <td>{{ $employee->telepon }}</td>
-                                        <td>{{ $employee->avatar }}</td>
+                                        <td>{{ $customer->id }}</td>
+                                        <td>{{ $customer->email }}</td>
+                                        <td>{{ $customer->Nama }}</td>
+                                        <td>{{ $customer->Nama_belakang }}</td>
+                                        <td>{{ $customer->alamat }}</td>
+                                        <td>{{ $customer->telepon }}</td>
+                                        <td>{{ $customer->avatar }}</td>
                                         <td>
                                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addKaryawanModal"
-    data-id="{{ $employee->id }}" data-email="{{ $employee->email }}" data-password="{{ $employee->password }}"
-    data-nama="{{ $employee->Nama }}" data-namabelakang="{{ $employee->Nama_belakang }}" data-alamat="{{ $employee->alamat }}"
-    data-telepon="{{ $employee->telepon }}" data-avatar="{{ $employee->avatar }}">Edit</button>
+    data-id="{{ $customer->id }}" data-email="{{ $customer->email }}" data-password="{{ $customer->password }}"
+    data-nama="{{ $customer->Nama }}" data-namabelakang="{{ $customer->Nama_belakang }}" data-alamat="{{ $customer->alamat }}"
+    data-telepon="{{ $customer->telepon }}" data-avatar="{{ $customer->avatar }}">Edit</button>
 
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteKaryawanModal" data-id="{{ $employee->id }}">Delete</button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#deleteKaryawanModal" data-id="{{ $customer->id }}">Delete</button>
             </td>
                                     </tr>
                                 @endforeach
@@ -70,11 +70,11 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addKaryawanModalLabel">Add/Edit Karyawan</h5>
+                    <h5 class="modal-title" id="addKaryawanModalLabel">Add/Edit Nasabah</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                <form method="POST" action="{{ route('employee.store') }}">
+                <form method="POST" action="{{ route('customer.store') }}">
                     @csrf
                     <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
@@ -126,7 +126,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <form method="POST" action="{{ route('employee.destroy', 'delete-id') }}" id="deleteForm">
+                <form method="POST" action="{{ route('customer.destroy', 'delete-id') }}" id="deleteForm">
                     @csrf
                     @method('DELETE')
                     <button type="submit" class="btn btn-danger">Delete</button>
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", function() {
         deleteModal.addEventListener('show.bs.modal', function(event) {
             var button = event.relatedTarget;
             var id = button.getAttribute('data-id');
-            var action = '/employees/' + id;
+            var action = '/customers/' + id;
             deleteForm.action = action;
         });
     });
